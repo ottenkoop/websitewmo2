@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WMO Adviesraad & Werkgroep Toegankelijkheid | <%= @title %></title>
+	  	<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag "style", media: "all" %>
+		<%= javascript_include_tag "application" %>
+
+	<script type="text/javascript">
+		if($.cookie("css")) {
+			$("link").attr("href",$.cookie("css"));
+		}
+		$(document).ready(function() { 
+			$(".contrast a").click(function() { 
+				$("link").attr("href",$(this).attr('rel'));
+				$.cookie("css",$(this).attr('rel'), {expires: 365, path: '/'});
+				return false;
+			});
+		});
+	</script>
+	
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+			 $("#up").fontscale("p","up",{unit:"px", increment:2});
+			 $("#down").fontscale("p","down",{unit:"px", increment:2});
+			 $("#reset").fontscale("p","reset");
+			});
+	</script>
+
+</head>
+<body>
+<div id="container" >
+         <%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+    <div id="content <%=key %>"><%= value %></div>
+    <% end %>
+
+	<%= yield %>
+	
+</div>
+<% if !signed_in? %>
+	<%= render 'layouts/footer' %>
+	<% end %>
+
+
+</body>
+</html>

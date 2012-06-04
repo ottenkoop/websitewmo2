@@ -1,0 +1,5 @@
+<h1> De beheerder </h1>
+<% @administrators.each do |a| %>
+<p><%= a.name %>
+	<%= link_to "verwijder", a, :confirm => "Weet je het zeker?", :method => :delete %> 
+<% end %>

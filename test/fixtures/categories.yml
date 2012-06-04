@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wmo: MyString
+  werkgroep: MyString
+  FAQ: MyString
+
+two:
+  wmo: MyString
+  werkgroep: MyString
+  FAQ: MyString

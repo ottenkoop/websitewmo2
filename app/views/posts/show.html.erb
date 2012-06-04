@@ -1,0 +1,17 @@
+<div id="navigation_lightblue">
+	<ul class="navi"><p>
+		<li><strong><%= link_to "Nieuwsoverzicht", nieuwsoverzicht_path  %></a></li></strong>
+		<li><strong><%= link_to "| WMO Adviesraad", wmo_path  %></a></li></strong>
+		<li><strong><%= link_to "| Werkgroep Toegankelijkheid", wgt_path  %></a></li></strong>
+		<li><strong><%= link_to "| Algemeen |", algemeen_path  %></a></li></p></strong>
+	</ul>
+</div>
+<div id="content">
+<h1 id= "lightblue">Actueel: <%= @post.name %></h1>
+<p><strong><%= @post.created_at.strftime("%d-%m-%Y") %> &#124; Auteur: <%= @post.category.name %></strong></p>
+<p id="minimum"><%= @post.content %></p>
+<p id="show"><%= link_to_function "< TERUG NAAR HET OVERZICHT", "history.back()" %></p>
+</div>
+
+
+

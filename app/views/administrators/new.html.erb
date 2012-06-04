@@ -1,0 +1,11 @@
+<h1>De beheerder aanmaken</h1>
+
+<%= form_for (@administrator) do |f| %>
+<div class="field"><%= f.label :name, "Naam:" %>
+	<%= f.text_field :name %></div>
+<div class="field"><%= f.label :password, "Wachtwoord:" %>
+	<%= f.password_field :password %></div>
+<div class="field"><%= f.label :password_confirmation, "Nogmaals:" %>
+	<%= f.password_field :password_confirmation %></div>
+<div class="actions"><%= f.submit "Sign up"%></div>
+<% end %>

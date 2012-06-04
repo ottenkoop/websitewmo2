@@ -1,0 +1,24 @@
+<h1>Nieuwe</h1>
+
+<%= form_for @post do |f| %>
+	<p>
+	<%= f.collection_select(:category_id, Category.all, :id, :name) %>
+	</p>
+
+	<p>
+		<%= f.label :name, "Naam" %> <br />
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :title, "title" %> <br />
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :content, "Inhoud" %> <br />
+		<%= f.text_area :content, :cols => 55, :rows => 5 %>
+	</p>
+
+<p> <%= f.submit "Toevoegen" %></p>
+<% end %>

@@ -1,0 +1,20 @@
+<div id="navigation_violet">
+	<ul class="navi"><p>
+		<li><strong><%= link_to "Adressen", adressen_path %></a></li></strong>
+		<li><strong><%= link_to "| Contact Opnemen", contact_path %></a></li></strong>
+		<li><strong><%= link_to "| Veel gestelde vragen", faq_path  %></a></li></strong>
+		<li><strong><%= link_to "| Handige Links", links_path  %></a></li></strong>
+		<li><strong><a href="#">| Vacatures |</a></li></p></strong>
+	</ul>
+</div>
+<div id="content">
+<% @catname.each do |c| %>
+	<h1><%= c.category.name %></h1>
+<% end %>
+
+<% @questions.each do |p| %>
+	<p><%= link_to p.name, p %></p>
+	<p><%= p.content %></p>
+	<p><%= link_to "verwijder", p, :confirm => "Weet je het zeker?", :method => :delete %> 
+<% end %>
+</div>

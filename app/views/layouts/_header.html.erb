@@ -1,0 +1,47 @@
+<body>
+<nav>
+	<img class="logo"><a href="#"><%= link_to logo %></a>
+<ul class="top_items">
+	<li ><%= link_to text_small_img, '#', id: "down" %></a></li>
+	<li ><%= link_to text_normal_img, '#', id: "reset" %></a></li>
+	<li ><%= link_to text_large_img, "#", id: "up" %></a></li>
+	<li class="contrast"><a href="#" rel="/assets/style.css"><%= contrast_img_black %></a></li>
+    <li class="contrast"><a href="#" rel="/assets/blackwhite.css"><%= contrast_img_white %></a></li>
+	<li ><%= link_to sound_img %></li>
+</ul>
+</nav>
+
+<% if !signed_in? %>
+<header id="buttons">
+<ul>
+
+	<li class="home"><%= link_to "", root_path, title: "hallo" %></a></li>
+	<li class="about"><%= link_to "", '/about' %></a></li>
+	<li class="info"><%= link_to "", '/informatie' %></a></li>
+	<li class="actual"><%= link_to "", nieuwsoverzicht_path  %>
+	<li class="hotline"><%= link_to "", meldpunt_path %></a></li>
+	<li class="contact"><%= link_to "", adressen_path %></a></li>
+
+</ul>  
+</header>
+<% else %>
+<div id="content">
+<h1> Beheer </h1>
+	<ul class="navic">
+		<li><strong><%= link_to 'Overzicht', posts_path %> </a></strong></li>
+		<li><strong><%= link_to 'Nieuwe post', '/nieuweposts' %> </a></strong></li>
+		<li><strong><%= link_to 'Afkortingen', '/afkortingen' %> </a></strong></li>
+		<li><strong><a href="#"> Tips </a></strong></li>
+		<li><strong><a href="#">Downloads</a></strong></li>
+		<li><strong><%= link_to " WMO nieuws", wmo_path  %></a></li>
+		<li><strong><%= link_to " WGT nieuws", wgt_path  %></a></li>
+		<li><strong><%= link_to " Algemeen ", algemeen_path  %></a></strong></li>
+		<li><strong><%= link_to "FAQ", faq_path  %></a></strong></li>
+		<li><strong><%= link_to "Links", links_path  %></a></strong></li>
+		<li><strong><%= link_to "Logout ", signout_path %></a></strong></li>
+	</ul>
+
+</div>
+<% end %>
+
+

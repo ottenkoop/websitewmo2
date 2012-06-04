@@ -1,0 +1,30 @@
+<div>
+	<h1 id= "red">Welkom op de nieuwe website (beta v0.2)</h1>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse suscipit, 
+		turpis bibendum bibendum lobortis, urna leo aliquam tellus, a accumsan nibh mi 
+		ut sem. Suspendisse elit lectus, porttitor eget placerat non, suscipit ac magna
+		Integer accumsan ullamcorper imperdiet.Suspendisse elit lectus, porttitor eget 
+		placerat non, suscipit ac magna. Integer accumsan ullamcorper imperdiet.
+		</p>
+	<p id="artikellink_red">
+		<%= link_to 'Lees meer over WMO en Werkgroep toegankelijkheid >>>', about_path %></a>
+	</p>
+</div>
+
+<% @posts.each do |p| %>
+
+<div class="homenieuws">
+
+	<h2 id= "red"><%= p.name %></h2>
+	<%= link_to cat_left_img %>	
+	<p class="homenieuwstext">
+	<strong><%= p.created_at.strftime("%d-%m-%Y") %></strong><br /> <!--<nog weg halen, indeling bespreken-->
+	<%= truncate p.content, length: 50 %> 
+ 	</p>
+	<p class= "leesmeer"><%= link_to 'Lees meer...', p %></a></p>
+	
+</div>
+
+<% end %> 
+

@@ -1,0 +1,20 @@
+<div id="navigation_lightblue">
+	<ul class="navi"><p>
+		<li><strong><%= link_to "Nieuwsoverzicht", nieuwsoverzicht_path  %></a></li></strong>
+		<li><strong><%= link_to "| WMO Adviesraad", wmo_path  %></a></li></strong>
+		<li><strong><%= link_to "| Werkgroep Toegankelijkheid", wgt_path  %></a></li></strong>
+		<li><strong><%= link_to "| Algemeen |", algemeen_path  %></a></li></p></strong>
+	</ul>
+</div>
+
+<div id="content">
+
+<% @actual.each do |a| %>
+
+		<h1 id= "lightblue"><%= a.category.name %></h1>
+		<h2 id= "lightblue"><%= a.name %></h2>
+		<strong><p><%= a.created_at.strftime("%H:%M %d-%m-%Y") %> &#124; Auteur: <%= a.category.name %></p></strong>
+		<p><%= truncate a.content, length: 100 %> </p>
+		<p id="artikellink_lightblue"><%= link_to 'Lees meer', a %></a></p>
+<% end %>
+</div>

@@ -1,0 +1,30 @@
+<div id="content">
+  <h1 id="darkblue">Maak een melding:</h1>
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<%= form_for @mentionmessage, :url => meldpunt_path do |form| %>
+    <div class="mention_field">
+
+      <p><%= form.label :name, "Uw naam: (laat leeg als u anoniem wil blijven)" %></p>
+      <p><%= form.text_field :name %></p>
+   
+      <p><%= form.label :email, "Uw e-mail adres: (laat leeg als u anoniem wil blijven)" %></p>
+      <p><%= form.text_field :email %></p>
+
+      <p>Waarover heeft u een melding?</p>
+      <p id="radiobutton"><%= form.radio_button(:category, "Openbaar vervoer") %> Openbaar vervoer</p>
+      <p id="radiobutton"><%= form.radio_button(:category, "Regelingen") %>       Gebouwen</p>
+      <p id="radiobutton"><%= form.radio_button(:category, "straat") %>           Op straat</p>
+      <p id="radiobutton"><%= form.radio_button(:category, "Overige") %>          Overige</p><br/>
+
+      <p><%= form.label :subject, "Onderwerp:" %></p>
+      <p><%= form.text_field :subject %></p>
+    
+      <p><%= form.label :body, "Inhoud" %></p>
+      <p><%= form.text_area :body, :cols => 55, :rows => 5 %></p>
+      <p class="mention_submit"><%= form.submit "Verzenden" %></p>
+     </div>
+    <% end %>
+</div>

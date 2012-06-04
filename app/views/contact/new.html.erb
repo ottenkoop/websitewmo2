@@ -1,0 +1,33 @@
+<div id="navigation_violet">
+  <ul class="navi"><p>
+    <li><strong><%= link_to "Adressen", adressen_path %></a></li></strong>
+    <li><strong><%= link_to "| Contact Opnemen", contact_path %></a></li></strong>
+    <li><strong><%= link_to "| Veel gestelde vragen", faq_path  %></a></li></strong>
+    <li><strong><%= link_to "| Handige Links", links_path  %></a></li></strong>
+    <li><strong><a href="#">| Vacatures |</a></li></p></strong>
+  </ul>
+</div>
+
+<div id="content">
+  <h1 id="violet">Hier kunt u contact opnement via de mail.</h1>
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+<%= form_for @message, :url => contact_path do |form| %>
+    <div class="field">
+
+      <p><%= form.label :name, "Uw naam:" %></p>
+      <p><%= form.text_field :name %></p>
+   
+      <p><%= form.label :email, "Uw e-mail adres:" %></p>
+      <p><%= form.text_field :email %></p>
+
+      <p><%= form.label :subject, "Onderwerp:" %></p>
+      <p><%= form.text_field :subject %></p>
+    
+      <p><%= form.label :body, "Inhoud:" %></p>
+      <p><%= form.text_area :body, :cols => 55, :rows => 5 %></p>
+      <p class="submit"><%= form.submit "Verzenden" %></p>
+     </div>
+<% end %>
+</div>

@@ -1,0 +1,10 @@
+<h1>Overzicht</h1>
+
+	<% @categories.each do |p| %>
+<p>
+<%= link_to p.name, p %> | 
+<%= link_to "verwijder", p, :confirm => "Weet je het zeker?", :method => :delete %> 
+</p>
+
+
+	<% end %>

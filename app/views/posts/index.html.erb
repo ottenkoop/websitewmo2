@@ -1,0 +1,18 @@
+<div id="content">
+	<p class="contro"><strong>Categorie</strong></p>
+	<p class="contro"><strong>Naam</strong></p>
+	<p class="contro"><strong>Aangemaakt op:</strong></p>
+	<p class="contro"><strong>Aanpassen</strong></p>
+	<p class="contro"><strong>Verwijderen</strong></p>
+ 	<% @posts.each do |p| %>
+ 		<p class="contro"><%= p.category.name %></p>				
+		<p class="contro"><%= link_to p.name, p %></p>	
+		<p class="contro"><%= p.created_at.strftime("%d-%m-%Y %H:%M") %></p>		
+		<p class="contro"><%= link_to "Aanpassen", edit_post_path(p) %></p>			
+		<p class="contro"><%= link_to "verwijder", p, :confirm => "Weet je het zeker?", :method => :delete %></p>
+		<hr />					
+	<% end %>
+</div>
+	
+
+
