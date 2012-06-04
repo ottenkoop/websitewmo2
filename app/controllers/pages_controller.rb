@@ -1,7 +1,7 @@
 	class PagesController < ApplicationController
 
 def home
-	@posts= Post.all
+	@posts= Post.where(category_id: params[:category_id]).limit(2).order('id desc').all
   	@title = "Home"
   end
 
