@@ -1,15 +1,7 @@
 	class PagesController < ApplicationController
 
 def home
-	#@posts = Post.limit(2).order('id desc').all
-	@posts= Post.where(category_id: params[:category_id]).limit(2).order('id desc').all
-	#@posts = Post.where("Category = ?", 'algemeen').all
-	#WYSIWYG editor via jquery of misschien een gem ? niet vergeten 
-	#Waarom is de teaxaeara resizelble?
-	# alle CMS via posts laten verlopen, kan mooi zo.
-	#Script vinden voor FAQ inschuiven of verspringen.
-	#Ander script zoeken voor constrast? 
-	#Kijken naar de internalization gem 
+	@posts= Post.all
   	@title = "Home"
   end
 
