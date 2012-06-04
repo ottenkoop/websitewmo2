@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+	class PagesController < ApplicationController
 
 def home
 	#@posts = Post.limit(2).order('id desc').all

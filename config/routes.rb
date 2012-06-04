@@ -19,7 +19,7 @@ Websitewmo::Application.routes.draw do
   match '/signout', to: 'sessions#destroy'
 
   #Home pages
-  root :to => 'pages#home' , category_id: [1,2,3]
+  root :to => "pages#home", category_id: [1,2,3]
   
 
   #De actual pages
